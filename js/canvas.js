@@ -36,7 +36,6 @@ class Canvas{
 
 			this.canvas.addEventListener("mousemove", function(e){
 				if(mainThis.isMouseDown){
-					//let offset = mainThis.getOffset(this, e);
 					//mainThis.draw((e.pageX - offset[0]) - 3, (e.pageY - offset[1]) - 65); // les nombres 5 et 65 compensent un décalage que je n'arrive pas a expliquer
 					let rect = e.target.getBoundingClientRect();
 					console.log(rect, rect.left, rect.top);
@@ -47,17 +46,5 @@ class Canvas{
 		}else{
 			this.canvas.textContent = "Votre navigateur ne supporte pas l'application utilisé pour effectuer la signature en ligne."
 		}
-	}
-	getOffset(elem, event){
-		let offsetX = 0;
-		let offsetY = 0;
-		let el = elem;
-
-		while(el !== document){
-			offsetX += el.offsetLeft - el.scrollLeft;
-			offsetY += el.offsetTop - el.scrollTop;
-			el = el.parentNode;
-		}
-		return [offsetX, offsetY];
 	}
 }
