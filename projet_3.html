@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Location de vélo</title>
+		<!--meta-->
+		<meta charset="utf-8">
+		<meta name="description" content="Véloo est une agence de location de vélo situé à Lyon">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--icones - font awesome-->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+		<!--font - google font-->
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+		<!--CDN de Leaflet-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+            crossorigin="" />
+		<!--css-->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<header class="container flex_row_between_center">
+			<img src="images/logo_veloo.png" alt="logo veloo" title="logo veloo">
+			<h1>Location de vélo à Marseille</h1>
+		</header>
+
+		<hr class="separateur">
+
+		<nav class="container">
+			<ul class="flex_row_around_center">
+				<li><a href="#">ACCUEIL</a></li>
+				<li><a href="#">TARIFS</a></li>
+				<li><a href="#">CONTACT</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>
+		</nav>
+
+		<hr class="separateur">
+
+		<section id="slider">
+			<div class="slide" style="left: 0%;">
+				<aside class="container">
+					<div class="infos">
+						<h2>Comment louer un vélo chez Véloo?</h2>
+						<ul>
+							<li>- Rendez vous dans une de nos nombreuses agences</li>
+							<li>- Choississez votre vélo grace a une des bornes à l'extérieur</li>
+							<li>- Si vous avez réservé, il vous suffit d'entrer votre code Véloo sur la borne</li>
+							<li>- Récupérez votre vélo et partez a l'aventure !</li>
+						</ul>
+					</div>
+				</aside>
+			</div>
+			<div class="slide" style="left: 0%;">
+				<aside class="container">
+					<div class="infos">
+						<h2>Que faire après la location?</h2>
+						<ul>
+							<li>- Vous n’êtes pas propriétaire mais locataire ! vous roulez et nous nous chargeons du reste !</li>
+							<li>- Pour votre sécurité et celle des autres, veillez a respecter le code de la route.</li>
+							<li>- Suite à de nombreux problème, une pénalité de 5€ sera mit en place pour chaque quart d'heure de retard</li>
+						</ul>
+					</div>
+				</aside>
+			</div>
+			<div class="slide" style="left: 0%;">
+				<aside class="container">
+					<div class="infos">
+						<h2>A qui rendre le vélo une fois la location terminé ?</h2>
+						<ul>
+							<li>- Rendez vous dans une de nos nombreuses agences</li>
+							<li>- Positionnez le vélo dans l'emplacement prévu a cette effet</li>
+							<li>- il vous suffit d'entrer votre code Véloo sur la borne pour signaler votre retour</li>
+						</ul>
+					</div>
+				</aside>
+			</div>
+			<div id="boutons">
+				<i id="boutonLeft" class="fas fa-angle-left"></i>
+				<i id="boutonPlayPause" class="fas fa-pause"></i>
+				<i id="boutonRight" class="fas fa-angle-right"></i>
+			</div>
+		</section>
+
+		<section id="blocInfoStation">
+			<h2>Réservez votre vélo dès maintenant !</h2>
+			
+			<p>Vous pouvez réserver votre vélo en moins de 5 minutes, il suffit de vous inscrire ! (voir ci-dessous)
+				<br>Un numéro vous sera attribué, vous n'aurez plus qu'a entrer ce numéro sur la borne pour récuperer votre vélo.
+			</p>
+			<div id="blocMap" class="flex_row_around_center">
+				<div id="map"></div>
+				<div id="infoMap">
+					<h3>Détails de la station</h3>
+					<p>Séléctionnez une station pour avoir plus d'informations.</p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<p></p>
+					<form>
+						<p>
+							<label for="nom">Nom : </label>
+							<input type="text" name="nom" id="nom">
+						</p>
+						<p>
+							<label for="prenom">Prenom : </label>
+							<input type="text" name="prenom" id="prenom">
+						</p>
+					</form>
+					<p>Réservation</p>
+				</div>
+				<div id="blocSignature">
+					<div>
+						<div>
+							<i class="fas fa-pencil-alt"></i>
+							<p>Signature</p>
+						</div>
+						<canvas id="signature" width="500" height="300"></canvas>
+					</div>
+					<div>
+						<p id="effacerCanvas" class="boutonSignature">Effacer</p>
+						<p id="retourCanvas" class="boutonSignature">Retour</p>
+						<p id="validerCanvas" class="boutonSignature">Valider</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer id="blocReservation">
+			<p>Vélo réservé a la station "<span>nom de station non défini</span>" par <span>Nom</span> <span>Prenom</span></p>
+			<p>Temps restant : <span>0</span>min <span>0</span>sc</p>
+		</footer>
+
+		<!--ajax -->
+		<script type="text/javascript" src="js/ajax.js"></script>
+		<!--Leaflet-->
+		<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+            crossorigin=""></script>
+        <!--js-->
+		<script type="text/javascript" src="js/slide.js"></script>
+		<script type="text/javascript" src="js/station.js"></script>
+		<script type="text/javascript" src="js/ville.js"></script>
+		<script type="text/javascript" src="js/canvas.js"></script>
+		<script type="text/javascript" src="js/timer.js"></script>
+		<script type="text/javascript" src="js/signature.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>

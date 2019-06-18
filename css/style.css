@@ -1,0 +1,306 @@
+body{
+	font-family: 'Raleway', sans-serif;
+	margin: 0px;
+}
+.container{
+	max-width : 1200px;
+	height: 100%;
+	margin: auto;
+}
+.separateur{
+	border: 0px;
+	height: 1px;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+.flex_row_between_center{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.flex_row_around_center{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+a{
+	color: black;
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+
+/* HEADER */
+
+header{
+	padding: 10px 0;
+}
+header > p{
+	align-self: flex-end;
+	font-size: 2.5em;
+	font-weight: bold;
+	margin: 5px;
+}
+
+/* NAV */
+
+nav > ul{
+	color: skyblue;
+	font-size: 1.2em;
+}
+nav li:hover{
+	text-decoration: underline;
+}
+
+/* SLIDER */
+
+#slider{
+	width: 100%;
+	height: 500px;
+
+	display: flex;
+	flex-wrap: nowrap;
+	overflow: hidden;
+
+	position: relative;
+}
+.slide:nth-child(1){
+	background-image: url(../images/slide1.jpg);
+}
+.slide:nth-child(2){
+	background-image: url(../images/slide2.jpg);
+}
+.slide:nth-child(3){
+	background-image: url(../images/slide3.jpg);
+}
+.slide{
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-width: 100%;
+	height: 100%;
+
+	position: relative;
+
+	transition: left 0.3s ease-out;
+}
+.infos{
+	margin-top: 40px;
+	padding: 20px;
+	width: 30%;
+	height: 75%;
+
+	color: white;
+	background-color: rgba(0, 0, 0, 0.8);
+	border: 0.5px solid white;
+	border-radius: 20px;
+}
+.infos h2{
+	font-size: 1.8em;
+	margin-top: 0;
+	text-align: center;
+}
+.infos li{
+	margin-bottom: 15px;
+	font-size: 1.3em;
+}
+#boutons{
+	position: absolute;
+	bottom: 0px;
+	left: 48%;	
+}
+i{
+	font-size: 1.7em;
+	padding: 8px 14px;
+	margin: 0 10px 20px 10px;
+
+	background-color: rgba(0, 0, 0, 0.9);
+	color: white;
+	border: 0.5px solid white;
+	border-radius: 30px;
+
+	cursor: pointer;
+}
+i:nth-child(2){
+	padding: 10px;
+	font-size: 1.4em;
+}
+
+/* MAP */
+
+/*section map + info station*/
+#blocInfoStation{
+	margin-bottom: 30px;
+}
+#blocInfoStation > h2{
+	font-size: 2em;
+	text-align: center;
+}
+#blocInfoStation > p{
+	font-size: 1.6em;
+	text-align: center;
+}
+
+/*map*/
+#blocMap{
+	width: 100%;
+	position: relative;
+}
+#map{
+	width: 65%;
+	height: 600px;
+	border: 1px solid skyblue;
+	border-radius: 20px;
+}
+
+/*info station*/
+#infoMap{
+	width: 30%;
+	height: 600px;
+
+	border: 2px solid skyblue;
+	border-radius: 20px;
+}
+#infoMap > h3{
+	text-align: center;
+	font-size: 2em;
+	text-decoration: underline;
+}
+#infoMap > p{
+	margin-left: 10px;
+	padding: 5px;
+	font-size: 1.2em;
+}
+#infoMap > p:first-of-type{
+	text-align: center;
+	font-size: 1.3em;
+	font-weight: bold;
+	background-color: skyblue; 
+	margin-left: 0px;
+}
+#infoMap > p:nth-of-type(2){ /*open or closed*/
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.3em;
+	text-decoration: underline;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+#infoMap > form{ /*nom prenom*/
+	max-width: 60%;
+	margin-left: 10px;
+	display: none;
+}
+#infoMap > form > p{
+	display: flex;
+	justify-content: space-between;
+}
+#infoMap > p:last-of-type{ /*bouton reservation*/
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+
+	background-color: skyblue;
+	border: 1px solid black;
+	border-radius: 20px;
+
+	width: 30%;
+
+	margin: auto;
+	margin-top: 30px;
+
+	cursor: pointer;
+	display: none;
+}
+.open{
+	color: #4AEC59;
+	border: 1px solid #4AEC59;
+}
+.closed{
+	color: #F2373C;
+	border: 1px solid #F2373C;
+}
+
+/*zone signature*/
+#blocSignature{
+	position: absolute;
+
+	width: 50%;
+	height: 60%;
+
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	opacity: 0;
+	transition: opacity 0.3s linear;
+
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 5000;
+}
+#blocSignature > div:first-child{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#blocSignature > div > div{
+	width: 20%;
+	height: 100%;
+
+	font-size: 1.5em;
+	font-weight: bold;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#blocSignature i{
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+	transform: scale(1.5);
+	margin-top: 20px;
+	cursor:default;
+}
+#blocSignature  canvas{
+	border: 1px solid grey;
+	border-radius: 10px;
+	background-color: white;
+
+	cursor: crosshair;
+}
+#blocSignature > div:last-child{
+	display: flex;
+}
+.boutonSignature{
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+
+	background-color: rgba(0, 0, 0, 0.8);
+	border: 1px solid white;
+	border-radius: 20px;
+
+	width: 20%;
+
+	margin: auto;
+	margin-top: 10px;
+
+	cursor: pointer;
+}
+
+/*footer - infos reservations*/
+
+footer{
+	width: 70%;
+	margin: 20px auto;
+	text-align: center;
+	font-size: 1.2em;
+
+	border-top:1px double red;
+	border-bottom:1px double red;
+	border-radius: 20px;
+	display: none;
+}
