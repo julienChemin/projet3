@@ -35,21 +35,11 @@ ul{
 header{
 	padding: 10px 0;
 }
-header > p{
+header > h1{
 	align-self: flex-end;
 	font-size: 2.5em;
 	font-weight: bold;
 	margin: 5px;
-}
-
-/* NAV */
-
-nav > ul{
-	color: skyblue;
-	font-size: 1.2em;
-}
-nav li:hover{
-	text-decoration: underline;
 }
 
 /* SLIDER */
@@ -106,8 +96,8 @@ nav li:hover{
 }
 #boutons{
 	position: absolute;
-	bottom: 0px;
-	left: 48%;	
+	bottom: 0;
+	left: -300%;	
 }
 i{
 	font-size: 1.7em;
@@ -137,7 +127,7 @@ i:nth-child(2){
 	text-align: center;
 }
 #blocInfoStation > p{
-	font-size: 1.6em;
+	font-size: 1.5em;
 	text-align: center;
 }
 
@@ -187,13 +177,14 @@ i:nth-child(2){
 	margin-right: 40px;
 }
 #infoMap > form{ /*nom prenom*/
-	max-width: 60%;
+	max-width: 70%;
 	margin-left: 10px;
 	display: none;
 }
 #infoMap > form > p{
 	display: flex;
 	justify-content: space-between;
+	transition: 0.2 linear;
 }
 #infoMap > p:last-of-type{ /*bouton reservation*/
 	text-align: center;
@@ -225,8 +216,8 @@ i:nth-child(2){
 #blocSignature{
 	position: absolute;
 
-	width: 50%;
-	height: 60%;
+	width: 700px;
+	height: 400px;
 
 	border: 2px solid black;
 	border-radius: 10px;
@@ -303,4 +294,353 @@ footer{
 	border-bottom:1px double red;
 	border-radius: 20px;
 	display: none;
+}
+
+/*====================================================================================================================================
+															medium desktops laptops
+====================================================================================================================================*/
+
+@media all and (min-width:992px) and (max-width:1200px){
+	.container{
+		max-width : 992px;
+	}
+	i{
+		transform: scale(0.9);
+	}
+/*slider*/
+	.infos h2{
+		font-size: 1.65em;
+	}
+	.infos li{
+		font-size: 1.15em;
+	}
+/*sous titre section map*/
+	#blocInfoStation > p{
+		font-size: 1.2em;
+	}
+/*zone info station*/
+	#infoMap > h3{
+		font-size: 1.9em;
+	}
+	#infoMap > p{
+		font-size: 1.15em;
+	}
+	#infoMap > p:first-of-type{/*adresse*/
+		font-size: 1.2em;
+	}
+	#infoMap > p:nth-of-type(2){ /*open or closed*/
+		font-size: 1.25em;
+	}
+	#infoMap > form{ /*nom prenom*/
+		max-width: 80%;
+	}
+	#infoMap > p:last-of-type{ /*bouton reservation*/
+		font-size: 1em;
+	}
+
+/*zone signature*/
+	#blocSignature{
+		width: 700px;
+		height: 400px;
+	}
+	#blocSignature > div > div{
+		width: 20%;
+		height: 100%;
+
+		font-size: 1.5em;
+	}
+	#blocSignature i{
+		transform: scale(1.5);
+	}
+	#blocSignature > div:last-child{
+		display: flex;
+	}
+	.boutonSignature{
+		font-size: 1.2em;
+		width: 20%;
+	}
+}
+
+/*====================================================================================================================================
+															medium device
+====================================================================================================================================*/
+
+@media all and (min-width:768px) and (max-width:992px){
+	.container{
+		max-width : 768px;
+	}
+	i{
+		transform: scale(0.8);
+	}
+/*header*/
+	header > h1{
+		font-size: 2.3em;
+	}
+	header img{
+		transform: scale(0.8);
+	}
+/*slider*/
+	.infos h2{
+		font-size: 1.55em;
+	}
+	.infos li{
+		font-size: 1.05em;
+	}
+/*sous titre section map*/
+	#blocInfoStation > p{
+		font-size: 1.2em;
+	}
+/*bloc map*/
+	#map{
+	width: 55%;
+	height: 600px;
+}
+/*zone info station*/
+	#infoMap{
+		width: 40%;
+		height: 600px;
+	}
+	#infoMap > h3{
+		font-size: 1.9em;
+	}
+	#infoMap > p{
+		font-size: 1.15em;
+	}
+	#infoMap > p:first-of-type{/*adresse*/
+		font-size: 1.2em;
+	}
+	#infoMap > p:nth-of-type(2){ /*open or closed*/
+		font-size: 1.25em;
+	}
+	#infoMap > form{ /*nom prenom*/
+		max-width: 80%;
+	}
+	#infoMap > p:last-of-type{ /*bouton reservation*/
+		font-size: 1em;
+	}
+
+/*zone signature*/
+	#blocSignature{
+		width: 650px;
+		height: 350px;
+	}
+	#blocSignature > div > div{
+		width: 20%;
+		height: 100%;
+
+		font-size: 1.5em;
+	}
+	#blocSignature i{
+		transform: scale(1.4);
+	}
+	#blocSignature > div:last-child{
+		display: flex;
+	}
+	.boutonSignature{
+		font-size: 1.1em;
+		width: 20%;
+	}
+}
+
+/*====================================================================================================================================
+															small device
+====================================================================================================================================*/
+
+@media all and (min-width:600px) and (max-width:768px){
+	.container{
+		max-width : 600px;
+	}
+	i{
+		transform: scale(0.7);
+	}
+/*header*/
+	header > h1{
+		font-size: 1.8em;
+	}
+	header img{
+		transform: scale(0.7);
+	}
+/*slider*/
+	.infos h2{
+		font-size: 1.35em;
+	}
+	.infos li{
+		font-size: 0.9em;
+	}
+	ul{
+		padding-inline-start: 20px;
+	}
+/*sous titre section map*/
+	#blocInfoStation > h2{
+		font-size: 1.8em;
+	}
+	#blocInfoStation > p{
+		font-size: 1.1em;
+	}
+/*bloc map*/
+	#map{
+	width: 55%;
+	height: 500px;
+}
+/*zone info station*/
+	#infoMap{
+		width: 40%;
+		height: 500px;
+	}
+	#infoMap > h3{
+		font-size: 1.6em;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	#infoMap > p{
+		font-size: 0.9em;
+		margin-top: 7px;
+		margin-bottom: 7px;
+	}
+	#infoMap > p:first-of-type{/*adresse*/
+		font-size: 1em;
+	}
+	#infoMap > p:nth-of-type(2){ /*open or closed*/
+		font-size: 1em;
+	}
+	#infoMap > form{ /*nom prenom*/
+		max-width: 90%;
+	}
+	#infoMap > form label{ /*nom prenom*/
+		font-size: 0.85em;
+	}
+	#infoMap > p:last-of-type{ /*bouton reservation*/
+		font-size: 0.8em;
+	}
+
+/*zone signature*/
+	#blocSignature{
+		width: 550px;
+		height: 350px;
+	}
+	#blocSignature > div > div{
+		width: 20%;
+		height: 100%;
+
+		font-size: 1.5em;
+	}
+	#blocSignature i{
+		transform: scale(1.5);
+	}
+	#blocSignature > div:last-child{
+		display: flex;
+	}
+	.boutonSignature{
+		font-size: 1.2em;
+		width: 20%;
+	}
+}
+
+/*====================================================================================================================================
+															smartphone
+====================================================================================================================================*/
+
+@media all and (max-width:600px){
+	.container{
+		max-width : 500px;
+	}
+	i{
+		transform: scale(0.6);
+		margin: 5px 5px;
+	}
+/*header*/
+	header > h1{
+		font-size: 1em;
+	}
+	header img{
+		transform: scale(0.5);
+	}
+/*slider*/
+	#slider{
+		height: 350px;
+	}
+	.slide{
+		height: 150px;
+	}
+	.infos{
+		margin: 150px auto 0px auto;
+		width: 85%;
+		height: 100%;
+	}
+	.infos h2{
+		font-size: 0.8em;
+	}
+	.infos li{
+		font-size: 0.6em;
+	}
+	ul{
+		padding-inline-start: 5px;
+	}
+/*sous titre section map*/
+	#blocInfoStation > h2{
+		font-size: 1.5em;
+	}
+	#blocInfoStation > p{
+		font-size: 0.8em;
+	}
+/*bloc map*/
+	#blocMap{
+		flex-direction: column;
+	}
+	#map{
+	width: 100%;
+	height: 250px;
+}
+/*zone info station*/
+	#infoMap{
+		width: 100%;
+		height: 420px;
+	}
+	#infoMap > h3{
+		font-size: 1.6em;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	#infoMap > p{
+		font-size: 0.9em;
+		margin-top: 7px;
+		margin-bottom: 7px;
+	}
+	#infoMap > p:first-of-type{/*adresse*/
+		font-size: 1em;
+	}
+	#infoMap > p:nth-of-type(2){ /*open or closed*/
+		font-size: 1em;
+	}
+	#infoMap > form{ /*nom prenom*/
+		max-width: 90%;
+	}
+	#infoMap > form label{ /*nom prenom*/
+		font-size: 0.85em;
+	}
+	#infoMap > p:last-of-type{ /*bouton reservation*/
+		font-size: 0.8em;
+	}
+
+/*zone signature*/
+	#blocSignature{
+		width: 300px;
+		height: 250px;
+	}
+	#blocSignature > div > div{
+		width: 20%;
+		height: 100%;
+
+		font-size: 0.7em;
+	}
+	#blocSignature i{
+		transform: scale(1);
+	}
+	#blocSignature > div:last-child{
+		display: flex;
+	}
+	.boutonSignature{
+		font-size: 0.7em;
+		width: 20%;
+	}
 }

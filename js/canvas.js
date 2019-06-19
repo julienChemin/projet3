@@ -36,15 +36,37 @@ class Canvas{
 
 			this.canvas.addEventListener("mousemove", function(e){
 				if(mainThis.isMouseDown){
-					//mainThis.draw((e.pageX - offset[0]) - 3, (e.pageY - offset[1]) - 65); // les nombres 5 et 65 compensent un décalage que je n'arrive pas a expliquer
 					let rect = e.target.getBoundingClientRect();
-					console.log(rect, rect.left, rect.top);
-					console.log(e.clientX - rect.left);
 					mainThis.draw(e.clientX - rect.left, e.clientY - rect.top);
 				}
 			});
 		}else{
 			this.canvas.textContent = "Votre navigateur ne supporte pas l'application utilisé pour effectuer la signature en ligne."
+		}
+
+		// modifie la taille du canvas en fonction de la taille de l'ecran et lors du resize
+		window.addEventListener("resize", function(){
+			if(window.innerWidth < 600){
+				mainThis.canvas.width = "230";
+				mainThis.canvas.height = "200";
+			}else if(window.innerWidth <= 768){
+				mainThis.canvas.width = "400";
+				mainThis.canvas.height = "250";
+			}else if(window.innerWidth > 768){
+				mainThis.canvas.width = "500";
+				mainThis.canvas.height = "300";
+			}
+		});
+
+		if(window.innerWidth < 600){
+			mainThis.canvas.width = "230";
+			mainThis.canvas.height = "200";
+		}else if(window.innerWidth <= 768){
+			mainThis.canvas.width = "400";
+			mainThis.canvas.height = "250";
+		}else if(window.innerWidth > 768){
+			mainThis.canvas.width = "500";
+			mainThis.canvas.height = "300";
 		}
 	}
 }

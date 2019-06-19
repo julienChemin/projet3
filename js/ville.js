@@ -84,8 +84,17 @@ class Ville{
 
 		//configure le bouton de reservation
 		document.querySelector("#" + this.conteneurInfo + " > p:last-of-type").addEventListener("click", function(){
-			document.getElementById(mainThis.zoneSignature).style.display = "flex";
-			document.getElementById(mainThis.zoneSignature).style.opacity = "1";
+			if(document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").textContent === " Aucun vélo disponible"){
+				document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").style.color = "red";
+				document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").style.fontWeight = "bold";
+				setTimeout(function(){
+					document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").style.color = "black";
+					document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").style.fontWeight = "normal"
+				}, 2500);
+			}else{
+				document.getElementById(mainThis.zoneSignature).style.display = "flex";
+				document.getElementById(mainThis.zoneSignature).style.opacity = "1";
+			}
 		});
 	}
 }
