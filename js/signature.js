@@ -60,7 +60,7 @@ class Signature{
 				mainThis.timer.timerOn();
 			}else{
 				localStorage.setItem("reservationEnCours", true);
-				mainThis.timer = new Timer(this, secondes, minutes);
+				mainThis.timer = new Timer(secondes, minutes);
 				mainThis.timer.timerOn();
 				mainThis.interval = setInterval(function(){
 					if(mainThis.timer.isOff){

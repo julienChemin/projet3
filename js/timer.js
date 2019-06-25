@@ -1,6 +1,5 @@
 class Timer{
-	constructor(bouttonStart, secondes, minutes){
-		this.bouttonStart = bouttonStart;
+	constructor(secondes, minutes){
 		this.secondes = secondes;
 		this.minutes = minutes;
 		this.interval = "";

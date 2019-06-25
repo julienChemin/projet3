@@ -74,8 +74,8 @@ class Ville{
 					
 
 					//affiche le bouton "reserver" et le formulaire au clic du premier marker
-					if(getComputedStyle(document.querySelector("#" + mainThis.conteneurInfo + " > p:last-of-type")).display === "none"){
-						document.querySelector("#" + mainThis.conteneurInfo + " > p:last-of-type").style.display = "block";
+					if(getComputedStyle(document.querySelector("#" + mainThis.conteneurInfo + " > button")).display === "none"){
+						document.querySelector("#" + mainThis.conteneurInfo + " > button").style.display = "block";
 						document.querySelector("#" + mainThis.conteneurInfo + " > form").style.display = "block";
 					}
 				});
@@ -83,7 +83,7 @@ class Ville{
 		});
 
 		//configure le bouton de reservation
-		document.querySelector("#" + this.conteneurInfo + " > p:last-of-type").addEventListener("click", function(){
+		document.querySelector("#" + this.conteneurInfo + " > button").addEventListener("click", function(){
 			if(document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").textContent === " Aucun vélo disponible"){
 				document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").style.color = "red";
 				document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").style.fontWeight = "bold";

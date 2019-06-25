@@ -67,6 +67,8 @@ header > h1{
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+
+	margin: 0px;
 	min-width: 100%;
 	height: 100%;
 
@@ -186,10 +188,9 @@ i:nth-child(2){
 	justify-content: space-between;
 	transition: 0.2 linear;
 }
-#infoMap > p:last-of-type{ /*bouton reservation*/
+#infoMap > button{ /*bouton reservation*/
 	text-align: center;
-	font-weight: bold;
-	font-size: 1.2em;
+	font-size: 1.1em;
 
 	background-color: skyblue;
 	border: 1px solid black;
@@ -334,8 +335,8 @@ footer{
 	#infoMap > form{ /*nom prenom*/
 		max-width: 80%;
 	}
-	#infoMap > p:last-of-type{ /*bouton reservation*/
-		font-size: 1em;
+	#infoMap > button{ /*bouton reservation*/
+		font-size: 0.9em;
 	}
 
 /*zone signature*/
@@ -415,8 +416,8 @@ footer{
 	#infoMap > form{ /*nom prenom*/
 		max-width: 80%;
 	}
-	#infoMap > p:last-of-type{ /*bouton reservation*/
-		font-size: 1em;
+	#infoMap > button{ /*bouton reservation*/
+		font-size: 0.95em;
 	}
 
 /*zone signature*/
@@ -509,8 +510,8 @@ footer{
 	#infoMap > form label{ /*nom prenom*/
 		font-size: 0.85em;
 	}
-	#infoMap > p:last-of-type{ /*bouton reservation*/
-		font-size: 0.8em;
+	#infoMap > button{ /*bouton reservation*/
+		font-size: 0.7em;
 	}
 
 /*zone signature*/
@@ -618,7 +619,7 @@ footer{
 	#infoMap > form label{ /*nom prenom*/
 		font-size: 0.85em;
 	}
-	#infoMap > p:last-of-type{ /*bouton reservation*/
+	#infoMap > button{ /*bouton reservation*/
 		font-size: 0.8em;
 	}
 
@@ -642,5 +643,9 @@ footer{
 	.boutonSignature{
 		font-size: 0.7em;
 		width: 20%;
+	}
+	footer{
+		width: 80%;
+		font-size: 1em;
 	}
 }

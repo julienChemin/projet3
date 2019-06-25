@@ -23,9 +23,9 @@
 		</header>
 
 		<section id="slider">
-			<div class="slide" style="left: 0%;">
+			<figure class="slide" style="left: 0%;">
 				<div class="container">
-					<div class="infos">
+					<figcaption class="infos">
 						<h2>Comment louer un vélo chez Véloo?</h2>
 						<ul>
 							<li>- Rendez vous dans une de nos nombreuses agences</li>
@@ -33,33 +33,33 @@
 							<li>- Si vous avez réservé, il vous suffit d'entrer votre code Véloo sur la borne</li>
 							<li>- Récupérez votre vélo et partez a l'aventure !</li>
 						</ul>
-					</div>
+					</figcaption>
 				</div>
-			</div>
-			<div class="slide" style="left: 0%;">
+			</figure>
+			<figure class="slide" style="left: 0%;">
 				<div class="container">
-					<div class="infos">
+					<figcaption class="infos">
 						<h2>Que faire après la location?</h2>
 						<ul>
 							<li>- Vous n’êtes pas propriétaire mais locataire ! vous roulez et nous nous chargeons du reste !</li>
 							<li>- Pour votre sécurité et celle des autres, veillez a respecter le code de la route.</li>
 							<li>- Suite à de nombreux problème, une pénalité de 5€ sera mit en place pour chaque quart d'heure de retard</li>
 						</ul>
-					</div>
+					</figcaption>
 				</div>
-			</div>
-			<div class="slide" style="left: 0%;">
+			</figure>
+			<figure class="slide" style="left: 0%;">
 				<div class="container">
-					<div class="infos">
+					<figcaption class="infos">
 						<h2>A qui rendre le vélo une fois la location terminé ?</h2>
 						<ul>
 							<li>- Rendez vous dans une de nos nombreuses agences</li>
 							<li>- Positionnez le vélo dans l'emplacement prévu a cette effet</li>
 							<li>- il vous suffit d'entrer votre code Véloo sur la borne pour signaler votre retour</li>
 						</ul>
-					</div>
+					</figcaption>
 				</div>
-			</div>
+			</figure>
 			<div id="boutons">
 				<i id="boutonLeft" class="fas fa-angle-left"></i>
 				<i id="boutonPlayPause" class="fas fa-pause"></i>
@@ -74,14 +74,14 @@
 				<br>Un numéro vous sera attribué, vous n'aurez plus qu'a entrer ce numéro sur la borne pour récuperer votre vélo.
 			</p>
 			<div id="blocMap" class="flex_row_around_center">
-				<div id="map"></div>
-				<div id="infoMap">
+				<div id="map"></div>		<!--contien la map-->
+				<div id="infoMap">		<!--contien les information sur les stations-->
 					<h3>Détails de la station</h3>
-					<p>Séléctionnez une station pour avoir plus d'informations.</p>
-					<p></p>
-					<p></p>
-					<p></p>
-					<p></p>
+					<p>Séléctionnez une station pour avoir plus d'informations.</p>		<!--contiendra le nom de la station-->
+					<p></p>		<!--open or close-->
+					<p></p>		<!--adresse de la station-->
+					<p></p>		<!--nombre de place dispo-->
+					<p></p>		<!--nombre de velo dispo-->
 					<form>
 						<p>
 							<label for="nom">Nom : </label>
@@ -92,9 +92,9 @@
 							<input type="text" name="prenom" id="prenom">
 						</p>
 					</form>
-					<p>Réservation</p>
+					<button>Réservation</button>
 				</div>
-				<div id="blocSignature">
+				<div id="blocSignature"> 	<!--ce bloc apparait lors du clic sur le bouton "reservation"-->
 					<div>
 						<div>
 							<i class="fas fa-pencil-alt"></i>
@@ -111,7 +111,7 @@
 			</div>
 		</section>
 
-		<footer id="blocReservation">
+		<footer id="blocReservation">		<!--ce bloc apparait lorsqu'il y a une reservation-->
 			<p>Vélo réservé a la station "<span>nom de station non défini</span>" par <span>Nom</span> <span>Prenom</span></p>
 			<p>Temps restant : <span>0</span>min <span>0</span>sc</p>
 		</footer>

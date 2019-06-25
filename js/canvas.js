@@ -1,9 +1,9 @@
 class Canvas{
-	constructor(idCanvas){
+	constructor(idCanvas, color = "#000"){
 		this.canvas = document.getElementById(idCanvas);
 		this.isMouseDown = false;
 		this.isDrawing = false;
-		this.color = "#000";
+		this.color = color;
 	}
 	draw(x, y){
 		if(!this.isDrawing){
@@ -44,7 +44,7 @@ class Canvas{
 			this.canvas.textContent = "Votre navigateur ne supporte pas l'application utilisé pour effectuer la signature en ligne."
 		}
 
-		// modifie la taille du canvas en fonction de la taille de l'ecran et lors du resize
+		// modifie la taille du canvas en fonction de la taille de l'ecran au chargement et lors du resize
 		window.addEventListener("resize", function(){
 			if(window.innerWidth < 600){
 				mainThis.canvas.width = "230";
