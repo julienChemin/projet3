@@ -84,13 +84,38 @@ class Ville{
 
 		//configure le bouton de reservation
 		document.querySelector("#" + this.conteneurInfo + " > button").addEventListener("click", function(){
-			if(document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").textContent === " Aucun vélo disponible"){
-				document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").style.color = "red";
-				document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").style.fontWeight = "bold";
+			let qttVeloElt = document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)");
+			let nomSignataireElt = document.querySelector("#" + mainThis.conteneurInfo + " > form > p:nth-of-type(1) input");
+			let prenomSignataireElt = document.querySelector("#" + mainThis.conteneurInfo + " > form > p:nth-of-type(2) input");
+
+			if(qttVeloElt.textContent === " Aucun vélo disponible"){
+				qttVeloElt.style.color = "red";
+				qttVeloElt.style.fontWeight = "bold";
 				setTimeout(function(){
-					document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").style.color = "black";
-					document.querySelector("#" + mainThis.conteneurInfo + " > p:nth-of-type(5)").style.fontWeight = "normal"
+					qttVeloElt.style.color = "black";
+					qttVeloElt.style.fontWeight = "normal"
 				}, 2500);
+			}else if(nomSignataireElt.value === "" || prenomSignataireElt.value === ""){
+				if(nomSignataireElt.value === ""){
+					nomSignataireElt.style.border = "solid 1px red";
+					nomSignataireElt.previousElementSibling.style.color = "red";
+					nomSignataireElt.previousElementSibling.style.fontWeight = "bold";
+					setTimeout(function(){
+						nomSignataireElt.removeAttribute("style");
+						nomSignataireElt.previousElementSibling.style.color = "black";
+						nomSignataireElt.previousElementSibling.style.fontWeight = "normal";
+					}, 2500);
+				}
+				if(prenomSignataireElt.value === ""){
+					prenomSignataireElt.style.border = "solid 1px red";
+					prenomSignataireElt.previousElementSibling.style.color = "red";
+					prenomSignataireElt.previousElementSibling.style.fontWeight = "bold";
+					setTimeout(function(){
+						prenomSignataireElt.removeAttribute("style");
+						prenomSignataireElt.previousElementSibling.style.color = "black";
+						prenomSignataireElt.previousElementSibling.style.fontWeight = "normal";
+					}, 2500);
+				}
 			}else{
 				document.getElementById(mainThis.zoneSignature).style.display = "flex";
 				document.getElementById(mainThis.zoneSignature).style.opacity = "1";

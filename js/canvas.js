@@ -40,6 +40,28 @@ class Canvas{
 					mainThis.draw(e.clientX - rect.left, e.clientY - rect.top);
 				}
 			});
+
+			//appareil tactil
+			this.canvas.addEventListener("touchstart", function(e){
+				e.preventDefault();
+				mainThis.isMouseDown = true;
+			});
+
+			document.addEventListener("touchend", function(){
+				mainThis.isMouseDown = false;
+				mainThis.isDrawing = false;
+			});
+
+			this.canvas.addEventListener("touchmove", function(e){
+				if(mainThis.isMouseDown){
+					let rect = e.target.getBoundingClientRect();
+					let touches = e.changedTouches;
+					for(let touche of touches){
+						mainThis.draw(touche.clientX - rect.left, touche.clientY - rect.top);
+					}
+				}
+			});
+
 		}else{
 			this.canvas.textContent = "Votre navigateur ne supporte pas l'application utilisé pour effectuer la signature en ligne."
 		}
